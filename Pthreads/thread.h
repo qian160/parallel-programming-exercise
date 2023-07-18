@@ -36,8 +36,8 @@ void join() {
     for (int i = 0; i < NTHREAD; i++) {
         struct thread *t = &tpool[i];
         if (t->status == T_LIVE) {
-        pthread_join(t->thread, NULL);
-        t->status = T_DEAD;
+            pthread_join(t->thread, NULL);
+            t->status = T_DEAD;
         }
     }
 }
